@@ -19,3 +19,111 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-800; /* Default background and text */
+}
+
+/* Gradient Animation for Hero */
+.bg-size-200 {
+  background-size: 200% 200%;
+}
+@keyframes gradientAnimate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  animation: gradientAnimate 15s ease infinite;
+}
+
+/* Scroll-triggered Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fadeInLeft { animation: fadeInLeft 0.7s ease-out forwards; }
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-fadeInRight { animation: fadeInRight 0.7s ease-out forwards; }
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-popIn { animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+
+
+/* Animations from AnimatedPopup.tsx (centralized) */
+.animate-popup {
+    animation: popup-kf 0.5s ease-out forwards;
+}
+@keyframes popup-kf { /* Renamed to avoid conflict if 'popup' is a common name */
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-tracking-in-expand-fwd-bottom {
+    animation: tracking-in-expand-fwd-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both; /* Added slight delay */
+}
+@keyframes tracking-in-expand-fwd-bottom {
+    0% { letter-spacing: -0.5em; transform: translateZ(-700px) translateY(100px); opacity: 0; } /* Adjusted Y */
+    40% { opacity: 0.6; }
+    100% { transform: translateZ(0) translateY(0); opacity: 1; }
+}
+
+.animate-text-focus-in {
+    animation: text-focus-in 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both; /* Added slight delay */
+}
+@keyframes text-focus-in {
+    0% { filter: blur(12px); opacity: 0; }
+    100% { filter: blur(0px); opacity: 1; }
+}
+
+/* Subtle Pulse on Hover */
+.hover-pulse:hover {
+  animation: pulse-kf 1.5s infinite;
+}
+@keyframes pulse-kf {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Section Title Underline Animation */
+.title-underline {
+  @apply h-1 bg-blue-600 mx-auto my-4 transition-all duration-500;
+  width: 0px; /* Start with no width */
+}
+.animate-underline-draw .title-underline {
+  width: 6rem; /* w-24 */
+}
+.title-underline-lg {
+  @apply h-1 bg-blue-600 mx-auto mt-2 transition-all duration-500;
+  width: 0px;
+}
+.animate-underline-draw-lg .title-underline-lg {
+  width: 11rem; /* w-44 */
+}
+
+
+/* Add some more specific styles for better visual appeal if needed */
+section {
+  @apply px-4 sm:px-6 lg:px-8; /* Consistent padding */
+}
