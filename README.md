@@ -10,7 +10,7 @@
     <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   </h1>
   <p>
-    <a href="https://visitor-badge.glitch.me/badge?page_id=hareem2134.hareem2134&left_text=Visitors" target="_blank">
+    <a href="https://visitor-badge.glitch.me/badge?page_id=https://github.com/Hareem2134.https://github.com/Hareem2134&left_text=Visitors" target="_blank">
       <img src="https://visitor-badge.glitch.me/badge?page_id=hareem2134.hareem2134&left_text=Visitors"/>
     </a>
   </p>
