@@ -13,6 +13,7 @@
     <a href="https://visitor-badge.glitch.me/badge?page_id=Hareem2134&left_text=Visitors" target="_blank">
     <img src="https://visitor-badge.glitch.me/badge?page_id=Hareem2134&left_text=Visitors"/>
     </a>
+    </a>
   </p>
 </div>
 
