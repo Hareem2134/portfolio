@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="[https://hareem-farooqi.vercel.app/]" target="_blank">
+  <a href="https://hareem-farooqi.vercel.app/" target="_blank">
     <img src="[LINK_TO_A_GIF_OF_YOUR_PORTFOLIO_SCROLLING_OR_INTERACTING]" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
   </a>
 </div>
@@ -10,8 +10,8 @@
     <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   </h1>
   <p>
-    <a href="https://visitor-badge.glitch.me/badge?page_id=YOUR_USERNAME.YOUR_USERNAME&left_text=Visitors" target="_blank">
-      <img src="https://visitor-badge.glitch.me/badge?page_id=YOUR_USERNAME.YOUR_USERNAME&left_text=Visitors"/>
+    <a href="https://visitor-badge.glitch.me/badge?page_id=Hareem2134.Hareem2134&left_text=Visitors" target="_blank">
+      <img src="https://visitor-badge.glitch.me/badge?page_id=Hareem2134.Hareem2134&left_text=Visitors"/>
     </a>
   </p>
 </div>
@@ -72,7 +72,7 @@ Actively expanding my expertise into **Generative AI & Cloud Computing** (Est. 2
 Whether it's complex applications, high-performance eCommerce, or augmenting your dedicated team, let's architect your success.
 
 <div align="center">
-  <a href="[https://hareem-farooqi.vercel.app/]" target="_blank">
+  <a href="https://hareem-farooqi.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/View%20My%20Portfolio-8A2BE2?style=for-the-badge&logo=internet-explorer&logoColor=white" alt="View My Portfolio"/>
   </a>
 </div>
@@ -85,7 +85,7 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
   <a href="mailto:hareemfarooqi2134@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
-  <a href="[https://www.linkedin.com/in/hareemfarooqi/]" target="_blank">
+  <a href="https://www.linkedin.com/in/hareemfarooqi/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <!-- Add other relevant social/contact badges -->
@@ -96,13 +96,13 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
 ### 📊 **My GitHub Stats:**
 <div align="center">
   <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="Hareem's GitHub Stats"/>
+    <img src="https://github-readme-stats.vercel.app/api?username=Hareem2134&show_icons=true&theme=radical&hide_border=true&count_private=true" alt="Hareem's GitHub Stats"/>
   </p>
   <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Hareem's Top Languages"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hareem2134&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Hareem's Top Languages"/>
   </p>
   <p>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hareem2134&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
   </p>
 </div>
 
