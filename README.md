@@ -10,9 +10,8 @@
     <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   </h1>
   <p>
-    <a href="https://visitor-badge.glitch.me/badge?page_id=Hareem2134&left_text=Visitors" target="_blank">
-    <img src="https://visitor-badge.glitch.me/badge?page_id=Hareem2134&left_text=Visitors"/>
-    </a>
+<img src="https://komarev.com/ghpvc/?username=Hareem2134&label=Profile%20views&color=blueviolet&style=flat-square" alt="Hareem2134 :: Profile Views" />
+<img src="http://hits.dwyl.com/Hareem2134/Hareem2134.svg" alt="Profile views">
     </a>
   </p>
 </div>

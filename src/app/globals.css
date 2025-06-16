@@ -1,38 +1,32 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* --- Root Variables for Theming (Optional) --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Example light mode background */
+  --foreground: #111827; /* Example light mode text (Tailwind gray-900) */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111827; /* Example dark mode background (Tailwind gray-900) */
+    --foreground: #f3f4f6; /* Example dark mode text (Tailwind gray-100) */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-
-
+/* --- Base HTML & Body Styles --- */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-gray-50 text-gray-800; /* Default background and text */
+  @apply bg-gray-50 text-gray-800 font-sans text-base;
+  overflow-x: hidden;
 }
 
-/* Gradient Animation for Hero */
+/* --- Hero Section Gradient Animation --- */
 .bg-size-200 {
   background-size: 200% 200%;
 }
@@ -45,85 +39,85 @@ body {
   animation: gradientAnimate 15s ease infinite;
 }
 
-/* Scroll-triggered Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-.animate-fadeInLeft { animation: fadeInLeft 0.7s ease-out forwards; }
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-.animate-fadeInRight { animation: fadeInRight 0.7s ease-out forwards; }
-
-@keyframes popIn {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-.animate-popIn { animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-
-
-/* Animations from AnimatedPopup.tsx (centralized) */
+/* --- Animations for AnimatedPopup Component (Used in Hero Section) --- */
+/* Default pop-in animation */
 .animate-popup {
-    animation: popup-kf 0.5s ease-out forwards;
+  animation: popup-hero-kf 0.6s ease-out forwards;
 }
-@keyframes popup-kf { /* Renamed to avoid conflict if 'popup' is a common name */
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.animate-tracking-in-expand-fwd-bottom {
-    animation: tracking-in-expand-fwd-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both; /* Added slight delay */
-}
-@keyframes tracking-in-expand-fwd-bottom {
-    0% { letter-spacing: -0.5em; transform: translateZ(-700px) translateY(100px); opacity: 0; } /* Adjusted Y */
-    40% { opacity: 0.6; }
-    100% { transform: translateZ(0) translateY(0); opacity: 1; }
+@keyframes popup-hero-kf {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-.animate-text-focus-in {
-    animation: text-focus-in 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both; /* Added slight delay */
+/* For Hero text: "I'm HAREEM FAROOQI" */
+.animate-tracking {
+  animation: tracking-hero-text-kf 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s both;
 }
-@keyframes text-focus-in {
-    0% { filter: blur(12px); opacity: 0; }
-    100% { filter: blur(0px); opacity: 1; }
+@keyframes tracking-hero-text-kf {
+  0% { letter-spacing: -0.5em; transform: translateY(60px); opacity: 0; }
+  40% { opacity: 0.6; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Subtle Pulse on Hover */
+/* For Hero paragraph */
+.animate-focus {
+  animation: focus-hero-paragraph-kf 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+}
+@keyframes focus-hero-paragraph-kf {
+  0% { filter: blur(6px); opacity: 0; transform: translateY(20px); }
+  100% { filter: blur(0px); opacity: 1; transform: translateY(0); }
+}
+
+/* --- Title Underline Styling (GSAP animates its properties) --- */
+.title-underline {
+  @apply h-1 bg-blue-600 mx-auto; /* Removed 'my-4' - GSAP wrapper will have margin */
+  /* GSAP will animate width or scaleX of an inner element, so no initial width:0px here is strictly needed */
+}
+.title-underline .underline-inner {
+  /* This inner div is what GSAP can scaleX on for a clean animation */
+  /* No specific styles needed here unless you want to add them,
+     GSAP will control its transform. Parent .title-underline provides bg and height. */
+}
+
+
+/* --- General Utility Styles --- */
+/* Pulse on hover for Hero buttons */
 .hover-pulse:hover {
-  animation: pulse-kf 1.5s infinite;
+  animation: pulse-kf 1.5s infinite ease-in-out;
 }
 @keyframes pulse-kf {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }
 }
 
-/* Section Title Underline Animation */
-.title-underline {
-  @apply h-1 bg-blue-600 mx-auto my-4 transition-all duration-500;
-  width: 0px; /* Start with no width */
-}
-.animate-underline-draw .title-underline {
-  width: 6rem; /* w-24 */
-}
-.title-underline-lg {
-  @apply h-1 bg-blue-600 mx-auto mt-2 transition-all duration-500;
-  width: 0px;
-}
-.animate-underline-draw-lg .title-underline-lg {
-  width: 11rem; /* w-44 */
-}
-
-
-/* Add some more specific styles for better visual appeal if needed */
+/* Consistent padding for sections */
 section {
-  @apply px-4 sm:px-6 lg:px-8; /* Consistent padding */
+  @apply px-4 sm:px-6 lg:px-8;
 }
+
+/* --- Portfolio Image Hover Effect --- */
+.portfolio-image-hover-effect {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: grayscale(100%);
+  will-change: transform, filter; /* Hint for smoother browser rendering on hover */
+}
+.group:hover .portfolio-image-hover-effect { /* Works when parent has 'group' class */
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* --- Base Styles for GSAP Animated Elements --- */
+/* Elements animated by GSAP should have their initial visual state (like opacity:0)
+   set by `gsap.set()`. However, adding `opacity: 0` here can prevent a flash
+   of unstyled content (FOUC) if JavaScript loads or executes slowly.
+   GSAP will override this immediately. */
+.gsap-flip-card,
+.gsap-section-title, /* Target the title itself */
+.gsap-about-text,
+.gsap-experience-card,
+.gsap-contact-col-left,
+.gsap-contact-col-right {
+  opacity: 0;
+}
+/* The .gsap-section-title-wrapper is mainly for triggering and doesn't need initial opacity:0 itself. */
+/* The .gsap-title-underline (inner div) will have its scaleX or width set by GSAP. */
