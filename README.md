@@ -11,7 +11,6 @@
   </h1>
   <p>
 <img src="https://komarev.com/ghpvc/?username=Hareem2134&label=Profile%20views&color=blueviolet&style=flat-square" alt="Hareem2134 :: Profile Views" />
-<img src="http://hits.dwyl.com/Hareem2134/Hareem2134.svg" alt="Profile views">
     </a>
   </p>
 </div>

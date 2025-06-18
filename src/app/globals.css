@@ -73,11 +73,6 @@ body {
   @apply h-1 bg-blue-600 mx-auto; /* Removed 'my-4' - GSAP wrapper will have margin */
   /* GSAP will animate width or scaleX of an inner element, so no initial width:0px here is strictly needed */
 }
-.title-underline .underline-inner {
-  /* This inner div is what GSAP can scaleX on for a clean animation */
-  /* No specific styles needed here unless you want to add them,
-     GSAP will control its transform. Parent .title-underline provides bg and height. */
-}
 
 
 /* --- General Utility Styles --- */
@@ -106,18 +101,11 @@ section {
   filter: grayscale(0%);
 }
 
-/* --- Base Styles for GSAP Animated Elements --- */
-/* Elements animated by GSAP should have their initial visual state (like opacity:0)
-   set by `gsap.set()`. However, adding `opacity: 0` here can prevent a flash
-   of unstyled content (FOUC) if JavaScript loads or executes slowly.
-   GSAP will override this immediately. */
 .gsap-flip-card,
-.gsap-section-title, /* Target the title itself */
+.gsap-section-title,
 .gsap-about-text,
 .gsap-experience-card,
 .gsap-contact-col-left,
 .gsap-contact-col-right {
   opacity: 0;
 }
-/* The .gsap-section-title-wrapper is mainly for triggering and doesn't need initial opacity:0 itself. */
-/* The .gsap-title-underline (inner div) will have its scaleX or width set by GSAP. */

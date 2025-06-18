@@ -1,3 +1,4 @@
+// src/app/page.tsx
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -14,7 +15,7 @@ import AnimatedPopup from "../../components/AnimatedPopup";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- Data Arrays (FULL TEXT RESTORED) ---
+// --- Data Arrays ---
 const skills = [
   {
     title: "Programming Languages",
@@ -110,49 +111,49 @@ const experiences = [
 
 const PortfolioCard = [
   {
-    image: "/1.png",
+    image: "/01.png",
     title: "Restaurant Ecommerce Website",
     description: "A comprehensive online ordering system and promotional website designed to empower restaurants with a powerful digital presence. Built with Next.js, it prioritizes speed, user engagement, and ease of management.",
     link: "https://restaurant-ecommerce-website.vercel.app/"
   },
   {
-    image: "/1.png",
+    image: "/02.png",
     title: "Admin Panel of Restaurant Ecommerce Website",
     description: "This admin panel project provides comprehensive e-commerce management, featuring product CRUD, bulk CSV uploads, order processing, discount creation, and an insightful dashboard with earnings charts.",
     link: "https://admin-restaurant-ecommerce-website.vercel.app/"
   },
   {
-    image: "/1.png",
+    image: "/03.png",
     title: "Dynamic E-commerce Website",
     description: "Full-Stack E-commerce Site with Next.js, Sanity & Stripe: A dynamic e-commerce web application built with React and Next.js, featuring API integration, Sanity for content and Stripe for payments.",
     link: "https://fullstack-ecommerce-with-nextjs-sanity-stripe.vercel.app/"
   },
   {
-    image: "/1.png",
+    image: "/04.png",
     title: "One Page Landing Website",
     description: "One Page Landing Website designed for businesses. Built with React and TypeScript for a high-performance, maintainable, and modern solution.",
     link: "https://visual-mind-map.vercel.app/"
   },
   {
-    image: "/1.png",
+    image: "/05.png",
     title: "Unit Converter",
     description: "A simple and interactive unit converter built with Streamlit and Pint. Supports multiple categories like Length, Weight, Temperature, and more.",
     link: "https://unit-converter-by-hareemfarooqi.streamlit.app/"
   },
   {
-    image: "/1.png",
+    image: "/06.png",
     title: "Password Strength Meter",
     description: "A Streamlit-based web app that evaluates password security in real-time. It provides instant feedback, a strength indicator, a custom password generator, and essential security tips.",
     link: "https://password-strength-meter-by-hareemfarooqi.streamlit.app/"
   },
   {
-    image: "/1.png",
+    image: "/07.png",
     title: "Personal Library Manager",
     description: "A command-line app to add, remove, search, and manage books while tracking your reading progress. Books are saved automatically with CLI (library.txt) and Streamlit (library.json), ensuring persistent storage for future use.",
     link: "https://personal-library-manager-by-hareemfarooqi.streamlit.app/"
   },
   {
-    image: "/1.png",
+    image: "/08.png",
     title: "Data Sweeper",
     description: "A Streamlit app for cleaning, transforming, and converting Excel/CSV files. Features include removing duplicates, filling missing values, renaming columns, filtering, sorting, merging datasets, and exporting to CSV/Excel. Built with Python, Pandas, and Streamlit.",
     link: "https://data-sweeper-by-hareemfarooqi.streamlit.app/"
@@ -217,11 +218,8 @@ export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Add a small delay before initializing GSAP to ensure DOM is fully ready
-    // and other scripts (like AnimatedPopup's initial animations) might have run.
     const initGsap = () => {
       const ctx = gsap.context(() => {
-        // --- Helper for "enter and stay" (non-scrubbed) animations ---
         const createEnterStayAnimation = (
           targets: string | HTMLElement[], 
           initialVars: gsap.TweenVars = { opacity: 0, y: 40 },
@@ -235,15 +233,13 @@ export default function Home() {
               trigger: target, start: startCondition, once: false, invalidateOnRefresh: true,
               onEnter: () => gsap.to(target, { ...animVars, delay: index * staggerAmount, overwrite: "auto" }),
               onLeaveBack: () => gsap.to(target, { ...initialVars, duration: (animVars.duration as number || 0.5) * 0.7, ease: "power1.in", overwrite: "auto" }),
-              // markers: process.env.NODE_ENV === "development",
             });
           });
         };
         
-        // --- Section Headings & Underlines ---
         gsap.utils.toArray<HTMLElement>('.gsap-section-title-wrapper').forEach(wrapper => {
           const title = wrapper.querySelector<HTMLElement>('.gsap-section-title');
-          const underlineContainer = wrapper.querySelector<HTMLElement>('.title-underline'); // Select the container
+          const underlineContainer = wrapper.querySelector<HTMLElement>('.title-underline');
           const underlineInner = underlineContainer?.querySelector<HTMLElement>('.underline-inner');
 
           if (title) {
@@ -264,10 +260,8 @@ export default function Home() {
           }
         });
         
-        // --- About Me Paragraphs & Button ---
         createEnterStayAnimation('.gsap-about-text', { opacity: 0, y: 25 }, { opacity:1, y:0, duration: 0.8, ease:"power2.out" }, 0.08, "top bottom-=30%");
         
-        // --- Experience Cards (Slide in from sides, enter and stay) ---
         gsap.utils.toArray<HTMLElement>('.gsap-experience-card').forEach((card, index) => {
           const isLeft = index % 2 === 0;
           const initialX = isLeft ? -80 : 80;
@@ -279,22 +273,41 @@ export default function Home() {
           });
         });
 
-        // --- GSAP Animations for Flipping Cards (Skills, Education, Portfolio) - "Flip and Stay" ---
         const flipCards = gsap.utils.toArray<HTMLElement>('.gsap-flip-card');
         flipCards.forEach((card, index) => {
           gsap.set(card, {
-            transformPerspective: 1000, rotationX: -90, opacity: 0, transformOrigin: "center 70%"
+            transformPerspective: 1200, 
+            rotationX: -80,            
+            y: 40,                     
+            opacity: 0,
+            transformOrigin: "center 60%" 
           });
+
           ScrollTrigger.create({
-            trigger: card, start: "top bottom-=30%", once: false, invalidateOnRefresh: true,
-            onEnter: () => gsap.to(card, { rotationX: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: (index % 3) * 0.15, overwrite: "auto" }),
-            onLeaveBack: () => gsap.to(card, { rotationX: -90, opacity: 0, duration: 0.6, ease: "power2.in", overwrite: "auto" }),
-            onLeave: () => gsap.to(card, { rotationX: 90, opacity: 0, duration: 0.6, ease: "power2.in", overwrite: "auto" }), // Flip out when scrolling past
-            onEnterBack: () => gsap.to(card, { rotationX: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: "auto" }), // Flip back in when scrolling up into view
+            trigger: card,
+            start: "top 85%", 
+            once: false, 
+            invalidateOnRefresh: true,
+            onEnter: () => gsap.to(card, {
+              rotationX: 0,
+              y: 0,
+              opacity: 1,
+              duration: 0.9, 
+              ease: "power3.out",
+              delay: (index % 3) * 0.12, 
+              overwrite: "auto"
+            }),
+            onLeaveBack: () => gsap.to(card, { 
+              rotationX: -80,
+              y: 40,
+              opacity: 0,
+              duration: 0.5, 
+              ease: "power2.in",
+              overwrite: "auto"
+            })
           });
         });
         
-        // --- Contact Section Columns ---
         const contactCols = gsap.utils.toArray<HTMLElement>('.gsap-contact-col');
         contactCols.forEach((col, index) => {
           const isLeft = col.classList.contains('gsap-contact-col-left');
@@ -307,9 +320,7 @@ export default function Home() {
           });
         });
 
-        // Refresh ScrollTrigger after a short delay to ensure all calculations are correct
-        // especially if other JS or image loading might affect layout.
-        gsap.delayedCall(0.2, () => ScrollTrigger.refresh(true))
+        gsap.delayedCall(0.2, () => ScrollTrigger.refresh(true));
 
       }, mainRef);
 
@@ -319,17 +330,15 @@ export default function Home() {
       };
     };
 
-    // Delay GSAP initialization slightly
-    const timer = setTimeout(initGsap, 100); // 100ms delay
-    return () => clearTimeout(timer); // Cleanup timer
+    const timer = setTimeout(initGsap, 100);
+    return () => clearTimeout(timer);
 
   }, []);
 
   return (
     <div ref={mainRef}>
-      {/* Hero Section (Uses AnimatedPopup) */}
+      {/* Hero Section */}
       <div id="home" className="bg-white">
-        {/* ... Hero JSX as in your previous correct version ... */}
         <div className="flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-700 animate-gradient bg-size-200 p-4 min-h-screen relative overflow-hidden">
           <div className="flex flex-col items-center gap-6 z-10 pt-24 md:pt-28">
             <AnimatedPopup animationType="popup" triggerOnce={true}>
@@ -392,7 +401,6 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="py-16 md:py-24 bg-gray-100">
-        {/* ... JSX for Skills section with .gsap-flip-card on each card div ... */}
         <div className="max-w-6xl mx-auto text-center">
           <div className="gsap-section-title-wrapper mb-2">
             <h2 className="gsap-section-title text-3xl md:text-4xl font-bold uppercase text-gray-900">Skills</h2>
@@ -401,13 +409,20 @@ export default function Home() {
              <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skillGroup) => (
-              <div key={skillGroup.title} className="gsap-flip-card h-full"> 
-                <div className="bg-gradient-to-br from-blue-700 via-purple-700 to-indigo-700 text-white p-6 rounded-xl shadow-xl h-full flex flex-col">
-                  <h3 className="text-xl font-semibold mb-4">{skillGroup.title}</h3>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {skillGroup.items.map((item) => ( <span key={item} className="bg-white/20 text-white px-3 py-1 rounded-full text-sm hover:bg-white/30 transition-colors duration-200 cursor-default">{item}</span> ))}
-                  </div>
+            {skills.map((skillGroup, index) => (
+              <div 
+                key={skillGroup.title} 
+                className="gsap-flip-card h-full group
+                           bg-gradient-to-br from-blue-700 via-purple-700 to-indigo-700 
+                           text-white p-6 rounded-xl 
+                           shadow-lg shadow-black/10 {/* Adjusted shadow for consistency */}
+                           flex flex-col 
+                           transition-all duration-300 ease-out 
+                           hover:shadow-xl hover:shadow-black/20 hover:scale-[1.03]"
+              >
+                <h3 className="text-xl font-semibold mb-4">{skillGroup.title}</h3>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {skillGroup.items.map((item) => ( <span key={item} className="bg-white/20 text-white px-3 py-1 rounded-full text-sm hover:bg-white/30 transition-colors duration-200 cursor-default">{item}</span> ))}
                 </div>
               </div>
             ))}
@@ -417,7 +432,6 @@ export default function Home() {
 
       {/* Education Section */}
       <section id="education" className="py-16 md:py-24 bg-gray-200">
-        {/* ... JSX for Education section with .gsap-flip-card on each card div ... */}
         <div className="max-w-5xl mx-auto text-center">
             <div className="gsap-section-title-wrapper mb-2">
               <h2 className="gsap-section-title text-3xl md:text-4xl font-bold uppercase text-gray-900">Education</h2>
@@ -426,12 +440,22 @@ export default function Home() {
                <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {education.map((edu) => (
-                <div key={edu.degree + edu.institution} className="gsap-flip-card h-full">
-                  <div className="bg-gradient-to-r from-blue-700 to-purple-700 p-6 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                    <div><h3 className="text-lg font-bold text-white mb-2">{edu.degree}</h3><p className="text-blue-200">{edu.institution}</p></div>
-                    <p className="text-blue-300 italic mt-3">{edu.year}</p>
+              {education.map((edu, index) => (
+                <div 
+                  key={edu.degree + edu.institution} 
+                  className="gsap-flip-card h-full group
+                             bg-gradient-to-r from-blue-700 to-purple-700 
+                             p-6 rounded-lg 
+                             shadow-lg shadow-black/10 {/* Adjusted shadow for consistency */}
+                             flex flex-col justify-between 
+                             transition-all duration-300 ease-out 
+                             hover:shadow-xl hover:shadow-black/20 hover:scale-[1.03]"
+                >
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-2">{edu.degree}</h3>
+                    <p className="text-blue-200">{edu.institution}</p>
                   </div>
+                  <p className="text-blue-300 italic mt-3">{edu.year}</p>
                 </div>
               ))}
             </div>
@@ -440,7 +464,6 @@ export default function Home() {
 
       {/* Experience Section */}
       <section id="experience" className="py-16 md:py-24 bg-white">
-        {/* ... JSX for Experience section with .gsap-experience-card on each card div ... */}
         <div className="max-w-4xl mx-auto">
           <div className="gsap-section-title-wrapper text-center mb-2">
             <h2 className="gsap-section-title text-3xl md:text-4xl font-bold uppercase text-gray-900">Experience</h2>
@@ -462,7 +485,6 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="bg-gray-100 w-full py-16 md:py-24">
-        {/* ... JSX for Portfolio section with .gsap-flip-card on each card div ... */}
         <div className="container mx-auto">
           <div className="gsap-section-title-wrapper text-center mb-2">
             <h2 className="gsap-section-title text-3xl md:text-4xl font-bold uppercase text-gray-900">Portfolio</h2>
@@ -471,24 +493,34 @@ export default function Home() {
              <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PortfolioCard.map((card) => (
-              <div key={card.title} className="gsap-flip-card h-full">
-                <div className="bg-gradient-to-br from-gray-800 via-purple-700 to-indigo-800 rounded-lg shadow-xl flex flex-col overflow-hidden h-full group">
-                  <Link href={card.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      width={600} 
-                      height={400}
-                      quality={85}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="w-full h-[200px] object-cover portfolio-image-hover-effect"
-                    />
-                  </Link>
-                  <div className="p-6 text-center flex-grow flex flex-col justify-between">
-                    <div><h3 className="text-xl font-semibold text-teal-400 uppercase tracking-wider">{card.title}</h3><p className="text-gray-300 mt-2 text-sm">{card.description}</p></div>
-                    <Link href={card.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium">View Project →</Link>
+            {PortfolioCard.map((card, index) => ( 
+              <div 
+                key={card.title} 
+                className="gsap-flip-card h-full group 
+                           bg-gradient-to-br from-gray-800 via-purple-700 to-indigo-800 
+                           rounded-lg 
+                           shadow-xl shadow-black/30
+                           flex flex-col 
+                           transition-all duration-300 ease-out 
+                           hover:shadow-2xl hover:shadow-black/40 hover:scale-[1.03]"
+              >
+                <Link href={card.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden"> {/* Image link retains overflow-hidden */}
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    width={600} 
+                    height={400}
+                    quality={85}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full h-[200px] object-cover portfolio-image-hover-effect" 
+                  />
+                </Link>
+                <div className="p-6 text-center flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-semibold text-teal-400 uppercase tracking-wider">{card.title}</h3>
+                    <p className="text-gray-300 mt-2 text-sm">{card.description}</p>
                   </div>
+                  <Link href={card.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium">View Project →</Link>
                 </div>
               </div>
             ))}
@@ -498,7 +530,6 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 bg-white">
-        {/* ... JSX for Contact section with .gsap-contact-col ... on columns ... */}
         <div className="container mx-auto">
           <div className="gsap-section-title-wrapper text-center mb-2">
             <h2 className="gsap-section-title text-3xl md:text-4xl font-bold uppercase text-gray-900">Contact Me</h2>
