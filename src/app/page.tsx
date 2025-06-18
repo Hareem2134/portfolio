@@ -274,7 +274,7 @@ export default function Home() {
         });
 
         const flipCards = gsap.utils.toArray<HTMLElement>('.gsap-flip-card');
-        flipCards.forEach((card, index) => {
+        flipCards.forEach((card, index) => { // This 'index' is used for stagger
           gsap.set(card, {
             transformPerspective: 1200, 
             rotationX: -80,            
@@ -294,7 +294,7 @@ export default function Home() {
               opacity: 1,
               duration: 0.9, 
               ease: "power3.out",
-              delay: (index % 3) * 0.12, 
+              delay: (index % 3) * 0.12, // Uses 'index' from flipCards.forEach
               overwrite: "auto"
             }),
             onLeaveBack: () => gsap.to(card, { 
@@ -409,16 +409,16 @@ export default function Home() {
              <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skillGroup, index) => (
+            {skills.map((skillGroup) => (
               <div 
                 key={skillGroup.title} 
                 className="gsap-flip-card h-full group
                            bg-gradient-to-br from-blue-700 via-purple-700 to-indigo-700 
                            text-white p-6 rounded-xl 
-                           shadow-lg shadow-black/10 {/* Adjusted shadow for consistency */}
+                           shadow-xl shadow-black/30
                            flex flex-col 
                            transition-all duration-300 ease-out 
-                           hover:shadow-xl hover:shadow-black/20 hover:scale-[1.03]"
+                           hover:shadow-xl hover:shadow-black/40 hover:scale-[1.03]"
               >
                 <h3 className="text-xl font-semibold mb-4">{skillGroup.title}</h3>
                 <div className="flex flex-wrap gap-2 mt-auto">
@@ -440,16 +440,16 @@ export default function Home() {
                <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {education.map((edu, index) => (
+              {education.map((edu) => (
                 <div 
                   key={edu.degree + edu.institution} 
                   className="gsap-flip-card h-full group
                              bg-gradient-to-r from-blue-700 to-purple-700 
                              p-6 rounded-lg 
-                             shadow-lg shadow-black/10 {/* Adjusted shadow for consistency */}
+                             shadow-xl shadow-black/30
                              flex flex-col justify-between 
                              transition-all duration-300 ease-out 
-                             hover:shadow-xl hover:shadow-black/20 hover:scale-[1.03]"
+                             hover:shadow-xl hover:shadow-black/40 hover:scale-[1.03]"
                 >
                   <div>
                     <h3 className="text-lg font-bold text-white mb-2">{edu.degree}</h3>
@@ -474,7 +474,7 @@ export default function Home() {
           <div className="space-y-10">
             {experiences.map((exp) => (
               <div key={exp.company} className="gsap-experience-card">
-                <div className="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-600 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-600 shadow-xl shadow-black/30 transition-all duration-300 hover:shadow-2xl hover:shadow-black/40 hover:scale-[1.02]">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{exp.company}</h3><p className="text-blue-600 font-semibold text-lg mt-1">{exp.role}</p><p className="text-gray-700 mt-3 text-base leading-relaxed">{exp.description}</p>
                 </div>
               </div>
@@ -493,7 +493,7 @@ export default function Home() {
              <div className="title-underline"><div className="underline-inner h-full bg-blue-600"></div></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PortfolioCard.map((card, index) => ( 
+            {PortfolioCard.map((card) => (
               <div 
                 key={card.title} 
                 className="gsap-flip-card h-full group 
@@ -504,7 +504,7 @@ export default function Home() {
                            transition-all duration-300 ease-out 
                            hover:shadow-2xl hover:shadow-black/40 hover:scale-[1.03]"
               >
-                <Link href={card.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden"> {/* Image link retains overflow-hidden */}
+                <Link href={card.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden">
                   <Image
                     src={card.image}
                     alt={card.title}
