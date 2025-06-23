@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
@@ -17,6 +17,7 @@ export default function Footer() {
             { href: "https://github.com/Hareem2134", icon: faGithub, label: "GitHub", color: "hover:text-white" },
             { href: "https://linkedin.com", icon: faLinkedin, label: "LinkedIn", color: "hover:text-blue-400" },
             { href: "https://instagram.com", icon: faInstagram, label: "Instagram", color: "hover:text-pink-400" },
+            { href: "https://x.com/hareem_2134", icon: faXTwitter, label: "X (Twitter)" }
           ].map(({ href, icon, label, color }) => (
             <Link 
               key={href} 
