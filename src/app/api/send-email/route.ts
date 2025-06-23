@@ -1,4 +1,3 @@
-// src/app/api/send-email/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
@@ -21,7 +20,7 @@ const resend = new Resend(resendApiKey);
 
 export async function POST(req: NextRequest) {
   if (!resendApiKey || !toEmail || !fromEmail) {
-    return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
+    return NextResponse.json({ error: 'Server configuration error. Please check environment variables.' }, { status: 500 });
   }
 
   try {
@@ -33,33 +32,40 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 });
     }
 
+    // Validate email format (simple regex)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return NextResponse.json({ error: 'Invalid email format.' }, { status: 400 });
+    }
+
     const { data, error } = await resend.emails.send({
-      from: `My Portfolio Contact <${fromEmail}>`, // e.g., 'Acme <onboarding@resend.dev>' or 'Your Name <noreply@yourverifieddomain.com>'
+      from: `My Portfolio Contact <${fromEmail}>`, 
       to: [toEmail],
       subject: `New Contact Form Message from ${name}`,
-      replyTo: email, // Set the sender's email as replyTo for easy responding
+      replyTo: email, 
       html: `
-        <div>
-          <h2>New Contact Form Submission</h2>
+        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          <h2 style="color: #333;">New Contact Form Submission</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
           <p><strong>Message:</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
+          <p style="white-space: pre-wrap; border-left: 3px solid #eee; padding-left: 10px;">${message}</p>
+          <hr>
+          <p style="font-size: 0.9em; color: #777;">This message was sent from your portfolio contact form.</p>
         </div>
       `,
-      // For plain text version (good for accessibility and some email clients)
-      // text: `New Contact Form Submission:\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`,
     });
 
     if (error) {
       console.error('Resend API Error:', error);
-      return NextResponse.json({ error: 'Failed to send email.', details: error.message }, { status: 500 });
+      return NextResponse.json({ error: 'Failed to send email.', details: error.message || 'Unknown Resend error' }, { status: 500 });
     }
 
     return NextResponse.json({ success: true, message: 'Message sent successfully!', data }, { status: 200 });
 
-  } catch (err: any) {
+  } catch (err) { // Corrected catch block
     console.error('API Route Error:', err);
-    return NextResponse.json({ error: 'Internal Server Error.', details: err.message }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : 'An unknown internal error occurred';
+    return NextResponse.json({ error: 'Internal Server Error.', details: errorMessage }, { status: 500 });
   }
 }

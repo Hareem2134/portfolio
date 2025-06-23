@@ -256,14 +256,14 @@ export default function Home() {
           initialVars: gsap.TweenVars = { opacity: 0, y: 40 },
           animVars: gsap.TweenVars = { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
           staggerAmount: number = 0.1,
-          startCondition: string = "top bottom-=30%"
+          startCondition: string = "top bottom-=20%"
         ) => {
           gsap.utils.toArray<HTMLElement>(targets).forEach((target, index) => {
             gsap.set(target, initialVars);
             ScrollTrigger.create({
               trigger: target, start: startCondition, once: false, invalidateOnRefresh: true,
               onEnter: () => gsap.to(target, { ...animVars, delay: index * staggerAmount, overwrite: "auto" }),
-              onLeaveBack: () => gsap.to(target, { ...initialVars, duration: (animVars.duration as number || 0.5) * 0.7, ease: "power1.in", overwrite: "auto" }),
+              onLeaveBack: () => gsap.to(target, { ...initialVars, duration: (animVars.duration as number || 0.5) * 0.5, ease: "power1.in", overwrite: "auto" }),
             });
           });
         };
@@ -540,10 +540,6 @@ export default function Home() {
     }
   };
 
-  // Placeholder for the year to avoid empty space if you prefer
-  const currentYearPlaceholder = new Date().getFullYear().toString();
-
-
   return (
     <div ref={mainRef}>
       {/* Hero Section */}
@@ -576,7 +572,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               {isClient && <AnimatedPopup animationType="popup" delay="0.7s" triggerOnce={true}><a href="#contact" className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 text-lg font-semibold hover-pulse">Contact Me</a></AnimatedPopup>}
-              {isClient && <AnimatedPopup animationType="popup" delay="0.8s" triggerOnce={true}><a href="#about" className="px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 text-lg font-semibold hover-pulse">Learn More</a></AnimatedPopup>}
+              {isClient && <AnimatedPopup animationType="popup" delay="0.8s" triggerOnce={true}><a href="#portfolio" className="px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 text-lg font-semibold hover-pulse">Projects</a></AnimatedPopup>}
             </div>
             <div className="flex gap-6 mt-8"> 
               {[
@@ -911,7 +907,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   ); 
 }
