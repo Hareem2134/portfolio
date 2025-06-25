@@ -10,8 +10,7 @@
     <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
   </h1>
   <p>
-<img src="https://komarev.com/ghpvc/?username=Hareem2134&label=Profile%20views&color=blueviolet&style=flat-square" alt="Hareem2134 :: Profile Views" />
-    </a>
+    <img src="https://komarev.com/ghpvc/?username=Hareem2134&label=Profile%20views&color=blueviolet&style=flat-square" alt="Hareem2134 :: Profile Views" />
   </p>
 </div>
 
@@ -37,13 +36,10 @@ I'm deeply invested in backend integrity, database efficiency & structural sound
 ### 💡 **Core Technical Expertise:**
 <div align="center">
   <p>
-    <!-- Keep your detailed shields.io badges here for Programming Languages, Web Dev, Design etc. -->
-    <!-- Example for one category -->
     <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
     <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-    <!-- ... add all other relevant skill badges from the previous README example ... -->
   </p>
 </div>
 <p align="center">
@@ -87,7 +83,6 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
   <a href="https://www.linkedin.com/in/hareemfarooqi/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
-  <!-- Add other relevant social/contact badges -->
 </div>
 
 ---
@@ -101,7 +96,7 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hareem2134&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Hareem's Top Languages"/>
   </p>
   <p>
-     <img src="https://github-readme-streak-stats.onrender.com/?user=Hareem2134&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
+    <img src="https://github-readme-streak-stats.onrender.com/?user=Hareem2134&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
   </p>
 </div>
 
