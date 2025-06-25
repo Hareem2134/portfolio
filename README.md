@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://hareem-farooqi.vercel.app/" target="_blank">
-    <img src="/portfolio.png" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
+    <img src="https://github.com/Hareem2134/portfolio/blob/master/public/portfolio.png" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
   </a>
 </div>
 
@@ -108,5 +108,5 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
 ---
 <div align="center">
   <img src="https://raw.githubusercontent.com/halfrost/halfrost/master/icons/header_.png" width="100%" alt="Decorative Footer"/>
-  <p><small>© 2024 Hareem Farooqi. All Rights Reserved.</small></p>
+  <p><small>© 2025 [current_year] Hareem Farooqi. All Rights Reserved.</small></p>
 </div>

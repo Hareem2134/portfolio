@@ -579,7 +579,7 @@ export default function Home() {
                 { href: "https://github.com/Hareem2134", icon: faGithub, delay: "0.9s" },
                 { href: "https://www.linkedin.com/in/hareemfarooqi", icon: faLinkedin, delay: "1.0s" },
                 { href: "https://www.instagram.com/hareem.farooqi", icon: faInstagram, delay: "1.1s" },
-                { href: "https://x.com/hareem_2134", icon: faXTwitter, delay: "1.2s" }
+                { href: "https://x.com/hareemfarooqi_", icon: faXTwitter, delay: "1.2s" }
               ].map(({ href, icon, delay }) => (
                 isClient && (
                   <AnimatedPopup animationType="popup" delay={delay} key={href} triggerOnce={true}>
@@ -843,7 +843,7 @@ export default function Home() {
                   <Link href="https://github.com/Hareem2134" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl hover:bg-black transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></Link>
                   <Link href="https://www.linkedin.com/in/hareemfarooqi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-blue-700 text-white rounded-full flex items-center justify-center text-xl hover:bg-blue-800 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></Link>
                   <Link href="https://www.instagram.com/hareem.farooqi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-full flex items-center justify-center text-xl hover:opacity-80 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></Link>
-                  <Link href="https://x.com/hareem_2134" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-full flex items-center justify-center text-xl hover:bg-gray-700 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="X (Twitter)"><FontAwesomeIcon icon={faXTwitter} /></Link>
+                  <Link href="https://x.com/hareemfarooqi_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-full flex items-center justify-center text-xl hover:bg-gray-700 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="X (Twitter)"><FontAwesomeIcon icon={faXTwitter} /></Link>
                 </div>
               </div>
             </div>
