@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://hareem-farooqi.vercel.app/" target="_blank">
-    <img src="https://github.com/Hareem2134/portfolio/blob/master/public/portfolio.png" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
+    <img src="https://raw.githubusercontent.com/Hareem2134/portfolio/master/public/portfolio.png" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
   </a>
 </div>
 
@@ -101,7 +101,7 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hareem2134&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Hareem's Top Languages"/>
   </p>
   <p>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hareem2134&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
+    <img src="https://streak-stats.demolab.com/?user=Hareem2134&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="Hareem's GitHub Streak"/>
   </p>
 </div>
 
