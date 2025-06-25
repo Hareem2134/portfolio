@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://hareem-farooqi.vercel.app/" target="_blank">
-    <img src="/portfolio" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
+    <img src="/portfolio.png" alt="Hareem Farooqi - Portfolio Showcase" width="800"/>
   </a>
 </div>
 
