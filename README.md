@@ -108,5 +108,5 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
 ---
 <div align="center">
   <img src="https://raw.githubusercontent.com/halfrost/halfrost/master/icons/header_.png" width="100%" alt="Decorative Footer"/>
-  <p><small>© 2025 [current_year] Hareem Farooqi. All Rights Reserved.</small></p>
+  <p><small>© 2025 Hareem Farooqi. All Rights Reserved.</small></p>
 </div>
