@@ -101,7 +101,7 @@ Have a project in mind, a technical challenge to solve, or just curious about ho
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hareem2134&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Hareem's Top Languages"/>
   </p>
   <p>
-    <img src="https://streak-stats.demolab.com/?user=Hareem2134&theme=radical&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="Hareem's GitHub Streak"/>
+     <img src="https://github-readme-streak-stats.onrender.com/?user=Hareem2134&theme=radical&hide_border=true" alt="Hareem's GitHub Streak"/>
   </p>
 </div>
 
