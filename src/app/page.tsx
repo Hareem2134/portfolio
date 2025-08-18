@@ -139,10 +139,34 @@ const PortfolioCard = [
     link: "https://luxe-realty-web.vercel.app/"
   },
   {
+    image: "/tech.png",
+    title: "Tech Mag Solutions",
+    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    link: "https://www.techmagsolutions.com/"
+  },
+  {
+    image: "/nexara.png",
+    title: "Nexara AI",
+    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    link: "https://nexara-ai.vercel.app/"
+  },
+  {
+    image: "/royal.png",
+    title: "Royal Cuisine Palace",
+    description: "Full-Stack E-commerce Site with Next.js, Sanity & Stripe: A dynamic e-commerce web application built with React and Next.js, featuring API integration, Sanity for content and Stripe for payments.",
+    link: "https://github.com/Hareem2134/GastronomiaElysium"
+  },
+  {
     image: "/03.png",
     title: "Dynamic E-commerce Website",
     description: "Full-Stack E-commerce Site with Next.js, Sanity & Stripe: A dynamic e-commerce web application built with React and Next.js, featuring API integration, Sanity for content and Stripe for payments.",
     link: "https://fullstack-ecommerce-with-nextjs-sanity-stripe.vercel.app/"
+  },
+  {
+    image: "/noorehunar.png",
+    title: "Noor e Hunar Store",
+    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    link: "https://noor-hunar-store.vercel.app/"
   },
     {
     image: "/streamer.png",
@@ -623,7 +647,7 @@ export default function Home() {
               Alhamdulillah I am a dedicated professional with experience in social media management, graphic design, video editing, and web development. I have collaborated with global clients like Dr. Quran (UK), HSH Clothing (Canada), Sheraz Properties (Dubai), and Ansaarullah (Pakistan) to create visually compelling content and manage impactful digital strategies.
             </p>
             <p className="gsap-about-text text-gray-200">
-              Alhamdulillah With a solid foundation in programming languages like C, C#, C++, Java, JavaScript, TypeScript, HTML, and CSS. Currently, I am expanding my knowledge in generative AI and Cloud Computing to further enhance my skill set In Shaa Allah.
+              Alhamdulillah With a solid foundation in programming languages like C, C#, C++, Java, Nextjs, React, JavaScript, TypeScript, HTML, and CSS. Currently, I am expanding my knowledge in generative AI and Cloud Computing to further enhance my skill set In Shaa Allah.
             </p>
             <p className="gsap-about-text text-gray-200">
               Passionate about continuous learning, I aim to contribute my diverse expertise in web development, design, and social media management to deliver creative and effective solutions In Shaa Allah.
