@@ -133,10 +133,22 @@ const PortfolioCard = [
     link: "https://admin-restaurant-ecommerce-website.vercel.app/"
   },
   {
+    image: "/luxe-realty.png",
+    title: "Luxe Realty",
+    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    link: "https://luxe-realty-web.vercel.app/"
+  },
+  {
     image: "/03.png",
     title: "Dynamic E-commerce Website",
     description: "Full-Stack E-commerce Site with Next.js, Sanity & Stripe: A dynamic e-commerce web application built with React and Next.js, featuring API integration, Sanity for content and Stripe for payments.",
     link: "https://fullstack-ecommerce-with-nextjs-sanity-stripe.vercel.app/"
+  },
+    {
+    image: "/streamer.png",
+    title: "Streamers Website",
+    description: "One Page Landing Website designed for businesses. Built with React and TypeScript for a high-performance, maintainable, and modern solution.",
+    link: "https://streamer-hq.vercel.app/"
   },
   {
     image: "/04.png",
