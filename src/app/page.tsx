@@ -141,20 +141,20 @@ const PortfolioCard = [
   {
     image: "/tech.png",
     title: "Tech Mag Solutions",
-    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    description: "Tech Mag Solutions is a digital agency offering comprehensive web and mobile app development, UI/UX design, and digital marketing services. They aim to empower businesses with innovative online solutions.",
     link: "https://www.techmagsolutions.com/"
   },
   {
     image: "/nexara.png",
     title: "Nexara AI",
-    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    description: "Nexara AI develops and implements advanced artificial intelligence solutions. They specialize in machine learning, deep learning, and computer vision, aiming to transform various industries with cutting-edge AI.",
     link: "https://nexara-ai.vercel.app/"
   },
   {
     image: "/royal.png",
     title: "Royal Cuisine Palace",
-    description: "Full-Stack E-commerce Site with Next.js, Sanity & Stripe: A dynamic e-commerce web application built with React and Next.js, featuring API integration, Sanity for content and Stripe for payments.",
-    link: "https://github.com/Hareem2134/GastronomiaElysium"
+    description: "Royal Cuisine Palace is an online platform for a restaurant, offering a diverse menu for convenient ordering. It aims to provide users with a seamless and high-quality culinary experience at their fingertips.",
+    link: "https://royal-cuisine.vercel.app/"
   },
   {
     image: "/03.png",
@@ -165,7 +165,7 @@ const PortfolioCard = [
   {
     image: "/noorehunar.png",
     title: "Noor e Hunar Store",
-    description: "A premier, high-end real estate portal offering advanced property search and discovery within a luxurious, animation-rich digital experience.",
+    description: "Noor e Hunar Store is an e-commerce platform for unique handcrafted products. It offers a curated selection of artisanal items like jewelry, home decor, and apparel, celebrating diverse craftsmanship.",
     link: "https://noor-hunar-store.vercel.app/"
   },
     {
@@ -612,7 +612,7 @@ export default function Home() {
             </div>
             <div className="flex gap-6 mt-8"> 
               {[
-                { href: "https://github.com/Hareem2134", icon: faGithub, delay: "0.9s" },
+                // { href: "https://github.com/Hareem2134", icon: faGithub, delay: "0.9s" },
                 { href: "https://www.linkedin.com/in/hareemfarooqi", icon: faLinkedin, delay: "1.0s" },
                 { href: "https://www.instagram.com/hareem.farooqi", icon: faInstagram, delay: "1.1s" },
                 { href: "https://x.com/hareemfarooqi_", icon: faXTwitter, delay: "1.2s" }
@@ -876,7 +876,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex space-x-4 md:space-x-5 mt-8">
-                  <Link href="https://github.com/Hareem2134" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl hover:bg-black transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></Link>
+                  {/* <Link href="https://github.com/Hareem2134" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl hover:bg-black transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="GitHub"><FontAwesomeIcon icon={faGithub} /></Link> */}
                   <Link href="https://www.linkedin.com/in/hareemfarooqi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-blue-700 text-white rounded-full flex items-center justify-center text-xl hover:bg-blue-800 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></Link>
                   <Link href="https://www.instagram.com/hareem.farooqi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-full flex items-center justify-center text-xl hover:opacity-80 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></Link>
                   <Link href="https://x.com/hareemfarooqi_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-black text-white rounded-full flex items-center justify-center text-xl hover:bg-gray-700 transform hover:scale-110 transition-all duration-300 shadow-md" aria-label="X (Twitter)"><FontAwesomeIcon icon={faXTwitter} /></Link>
